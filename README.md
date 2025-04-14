@@ -43,7 +43,23 @@ Esta aplicação é uma API REST desenvolvida em Java com Spring Boot para integ
 
 A estrutura do projeto está organizada da seguinte forma:
 
-hubspot-integration/ ├── src/main/java/com/meetime/hubspotintegration/ │ ├── HubSpotIntegrationApplication.java // Classe principal da aplicação │ ├── controller/ │ │ └── HubSpotController.java // Endpoints da API │ └── service/ │ └── HubSpotService.java // Lógica de integração com HubSpot ├── src/main/resources/ │ └── application.properties // Configurações da aplicação e credenciais HubSpot └── README.md // Documentação e instruções de execução
+hubspot-integration/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── meetime/
+│       │           └── hubspotintegration/
+│       │               ├── HubSpotIntegrationApplication.java  // Classe principal da aplicação
+│       │               ├── controller/
+│       │               │   └── HubSpotController.java          // Endpoints da API
+│       │               └── service/
+│       │                   └── HubSpotService.java             // Lógica de integração com HubSpot
+│       └── resources/
+│           └── application.properties                          // Configurações da aplicação e credenciais HubSpot
+├── README.md                                                   // Documentação e instruções de execução
+
+
 
 
 ## Configuração da Aplicação
@@ -140,14 +156,4 @@ Observação: Caso o access token não esteja definido (se não tiver sido obtid
 
 Envie uma requisição POST para http://localhost:8080/api/webhook/contacts utilizando uma ferramenta como Postman.
 
-- **Envie um payload simulado, por exemplo:**
-
-{
-  "event": "contact.creation",
-  "data": {
-    "id": "123",
-    "email": "novo.contato@example.com"
-  }
-}
-
-Verifique se a resposta indica que o webhook foi recebido com sucesso.
+- **Envie um payload 
