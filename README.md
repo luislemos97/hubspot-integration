@@ -41,11 +41,23 @@ Esta aplicação é uma API REST desenvolvida em Java com Spring Boot para integ
 
 ## Estrutura do Projeto
 
-A estrutura do projeto está organizada da seguinte forma:
-
-hubspot-integration/ ├── src/main/java/com/meetime/hubspotintegration/ │ ├── HubSpotIntegrationApplication.java // Classe principal da aplicação │ ├── controller/ │ │ └── HubSpotController.java // Endpoints da API │ └── service/ │ └── HubSpotService.java // Lógica de integração com HubSpot ├── src/main/resources/ │ └── application.properties // Configurações da aplicação e credenciais HubSpot └── README.md // Documentação e instruções de execução
-
-
+```
+hubspot-integration/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/
+│       │       └── meetime/
+│       │           └── hubspotintegration/
+│       │               ├── HubSpotIntegrationApplication.java      // Classe principal da aplicação
+│       │               ├── controller/
+│       │               │   └── HubSpotController.java              // Endpoints da API
+│       │               └── service/
+│       │                   └── HubSpotService.java                 // Lógica de integração com HubSpot
+│       └── resources/
+│           └── application.properties                              // Configurações da aplicação e credenciais HubSpot
+├── README.md                                                       // Documentação e instruções de execução
+```
 ## Configuração da Aplicação
 
 Edite o arquivo `src/main/resources/application.properties` com as informações obtidas no HubSpot:
@@ -58,7 +70,7 @@ hubspot.redirect_uri=http://localhost:8080/api/auth/callback
 hubspot.scopes=crm.objects.contacts.write crm.objects.contacts.read oauth
 # Durante os testes, o token pode ficar vazio para que seja obtido via fluxo OAuth:
 hubspot.access_token=
-
+````
 ## Como Executar
 
 Clone o repositório:
@@ -67,7 +79,7 @@ git clone https://github.com/seu-usuario/hubspot-integration.git
 cd hubspot-integration
 Compile a aplicação:
 
-- ** Utilize o Maven para compilar:**
+- **Utilize o Maven para compilar:**
 
 mvn clean package
 ou, diretamente, rode:
@@ -85,7 +97,7 @@ http://localhost:8080/api/auth/url para gerar a URL de autorização.
 
 GET /api/auth/url
 
-- ** Retorna a URL de autorização para iniciar o fluxo OAuth.**
+- **Retorna a URL de autorização para iniciar o fluxo OAuth.**
 
 - **Processamento do Callback OAuth**
 
